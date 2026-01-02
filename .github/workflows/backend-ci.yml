@@ -25,6 +25,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+          cache: 'gradle'
+          cache-dependency-path: andara-server/build.gradle
       
       - name: Setup Gradle wrapper JAR
         run: |
