@@ -15,17 +15,18 @@ export const NameStep: React.FC = () => {
   const [name, setName] = useState(formData.name);
 
   const handleNext = () => {
-    if (!name || name.trim().length === 0) {
+    const trimmedName = name.trim();
+    if (!trimmedName || trimmedName.length === 0) {
       dispatch(setValidationErrors({ name: 'Please enter a character name' }));
       return;
     }
-    if (name.length > 50) {
+    if (trimmedName.length > 50) {
       dispatch(
         setValidationErrors({ name: 'Name must be 50 characters or less' })
       );
       return;
     }
-    dispatch(updateFormData({ name: name.trim() }));
+    dispatch(updateFormData({ name: trimmedName }));
     dispatch(setStep('review'));
   };
 
@@ -54,7 +55,7 @@ export const NameStep: React.FC = () => {
 
       <div className="step-actions">
         <button onClick={() => dispatch(setStep('appearance'))}>Back</button>
-        <button onClick={handleNext} disabled={!name || name.trim().length === 0}>
+        <button onClick={handleNext} disabled={!name || name.trim().length === 0 || name.trim().length > 50}>
           Next: Review
         </button>
       </div>
