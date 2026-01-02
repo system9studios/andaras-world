@@ -1,0 +1,45 @@
+name: Frontend CI
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'andara-client/**'
+      - '.github/workflows/frontend-ci.yml'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'andara-client/**'
+      - '.github/workflows/frontend-ci.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: andara-client/package-lock.json
+      
+      - name: Install dependencies
+        run: npm ci
+        working-directory: andara-client
+      
+      - name: Type check
+        run: npx tsc --noEmit
+        working-directory: andara-client
+      
+      - name: Run tests
+        run: npm test -- --run
+        working-directory: andara-client
+      
+      - name: Build for production
+        run: npm run build
+        working-directory: andara-client
+

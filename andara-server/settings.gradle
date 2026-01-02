@@ -1,0 +1,18 @@
+rootProject.name = 'andara-server'
+
+include 'andara-api'
+include 'andara-application'
+include 'andara-domain'
+include 'andara-infrastructure'
+include 'andara-query'
+include 'andara-common'
+include 'andara-server-app'
+
+project(':andara-api').projectDir = file('andara-api')
+project(':andara-application').projectDir = file('andara-application')
+project(':andara-domain').projectDir = file('andara-domain')
+project(':andara-infrastructure').projectDir = file('andara-infrastructure')
+project(':andara-query').projectDir = file('andara-query')
+project(':andara-common').projectDir = file('andara-common')
+project(':andara-server-app').projectDir = file('andara-server-app')
+
