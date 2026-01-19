@@ -4,9 +4,10 @@ import './ImportWizard.css';
 
 interface ImportWizardProps {
   contentType: string;
+  onComplete?: () => void;
 }
 
-export const ImportWizard: React.FC<ImportWizardProps> = ({ contentType }) => {
+export const ImportWizard: React.FC<ImportWizardProps> = ({ contentType, onComplete }) => {
   const [files, setFiles] = useState<FileList | null>(null);
   const [importing, setImporting] = useState(false);
   const [result, setResult] = useState<unknown>(null);
@@ -36,6 +37,11 @@ export const ImportWizard: React.FC<ImportWizardProps> = ({ contentType }) => {
 
       const response = await importContent(contentType, items, dryRun);
       setResult(response);
+      
+      // Call onComplete after successful import (not on dry-run)
+      if (response.success && !dryRun && onComplete) {
+        onComplete();
+      }
     } catch (error) {
       setResult({ error: error instanceof Error ? error.message : 'Import failed' });
     } finally {

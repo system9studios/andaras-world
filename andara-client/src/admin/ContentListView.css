@@ -9,6 +9,11 @@
   margin-bottom: 20px;
 }
 
+.content-list-header h2 {
+  margin: 0;
+  text-transform: capitalize;
+}
+
 .content-list-actions {
   display: flex;
   gap: 10px;
@@ -20,25 +25,39 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
+  min-width: 250px;
 }
 
-.btn-primary {
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
+.content-search:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.content-list-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 12px;
   border-radius: 4px;
-  cursor: pointer;
+  margin-bottom: 20px;
 }
 
-.btn-primary:hover {
-  background-color: #0056b3;
+.content-list-loading {
+  padding: 40px;
+  text-align: center;
+  color: #666;
+}
+
+.content-list-empty {
+  text-align: center;
+  padding: 40px !important;
+  color: #666;
 }
 
 .content-list-table {
   background: white;
   border-radius: 4px;
   overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .content-list-table table {
@@ -46,14 +65,103 @@
   border-collapse: collapse;
 }
 
-.content-list-table th,
-.content-list-table td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+.content-list-table thead {
+  background-color: #f8f9fa;
 }
 
 .content-list-table th {
-  background-color: #f8f9fa;
+  padding: 12px;
+  text-align: left;
   font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.content-list-table td {
+  padding: 12px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.content-list-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.content-id {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: #666;
+}
+
+.content-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-small {
+  padding: 4px 8px;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-view {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.btn-view:hover {
+  background-color: #138496;
+}
+
+.btn-edit {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.btn-edit:hover {
+  background-color: #e0a800;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+.content-list-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.pagination-info {
+  color: #666;
+  font-size: 14px;
+}
+
+.btn-pagination {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-pagination:hover:not(:disabled) {
+  background-color: #f8f9fa;
+  border-color: #007bff;
+}
+
+.btn-pagination:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

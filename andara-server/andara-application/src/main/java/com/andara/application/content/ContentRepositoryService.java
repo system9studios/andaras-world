@@ -218,4 +218,26 @@ public class ContentRepositoryService {
         );
         return count != null && count > 0;
     }
+
+    /**
+     * Delete content by deactivating it (removing from active_content).
+     * Version history is preserved in content_versions.
+     */
+    @Transactional
+    public boolean deleteContent(ContentType contentType, String contentId) {
+        int deleted = jdbcTemplate.update(
+            """
+            DELETE FROM active_content
+            WHERE content_type = ? AND content_id = ?
+            """,
+            contentType.name(),
+            contentId
+        );
+        
+        if (deleted > 0) {
+            log.info("Deleted (deactivated) content: {} {}", contentType, contentId);
+            return true;
+        }
+        return false;
+    }
 }

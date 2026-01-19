@@ -45,3 +45,78 @@
   font-size: 12px;
   font-style: italic;
 }
+
+.content-editor-loading {
+  padding: 40px;
+  text-align: center;
+  color: #666;
+}
+
+.content-editor-form {
+  max-width: 900px;
+}
+
+.content-editor-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.content-editor-form fieldset {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.content-editor-form legend {
+  font-weight: bold;
+  padding: 0 8px;
+  color: #333;
+}
+
+.content-editor-form-actions {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  gap: 10px;
+}
+
+.content-editor-json {
+  width: 100%;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}

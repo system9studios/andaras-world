@@ -52,6 +52,12 @@ logging:
     root: INFO
     com.andara: DEBUG
 
+andara:
+  admin:
+    # Admin API token - set via ANDARA_ADMIN_TOKEN environment variable in production
+    # If not set, admin endpoints are UNPROTECTED (development only)
+    token: ${ANDARA_ADMIN_TOKEN:}
+
 content:
   hot-reload:
     enabled: true
