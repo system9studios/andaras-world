@@ -99,6 +99,7 @@ andaras-world/
 
 ## Documentation
 
+- [MVP Status Hub](docs/status/index.md) - Primary entry point for MVP status and tracking
 - [Project Inception](docs/andaras_world_inception.md) - Vision, scope, and project overview
 - [Game Design Document](docs/andaras_world_gdd.md) - Game mechanics and systems
 - [Domain Model](docs/andaras_world_domain_model.md) - Domain-driven design structure
@@ -138,4 +139,3 @@ This is a personal project in early development. See documentation for architect
 ## License
 
 [To be determined]
-
