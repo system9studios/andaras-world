@@ -1,0 +1,87 @@
+.audit-log {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.audit-log h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.audit-log-loading,
+.audit-log-error,
+.audit-log-empty {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+}
+
+.audit-log-error {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border-radius: 4px;
+}
+
+.audit-log-table {
+  overflow-x: auto;
+}
+
+.audit-log-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.audit-log-table thead {
+  background-color: #f8f9fa;
+}
+
+.audit-log-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.audit-log-table td {
+  padding: 12px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.audit-log-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.version-number {
+  width: 80px;
+}
+
+.version-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+.version-date {
+  white-space: nowrap;
+  color: #666;
+  font-size: 14px;
+}
+
+.version-author {
+  font-weight: 500;
+  color: #333;
+}
+
+.version-summary em {
+  color: #999;
+  font-style: italic;
+}
