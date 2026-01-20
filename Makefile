@@ -30,16 +30,13 @@ test-frontend:
 			echo "Installing dependencies..."; \
 			npm install --legacy-peer-deps; \
 		fi && \
-		npm test -- --run
+		npm test -- --run --reporter=verbose
 	@echo "✓ Frontend tests passed"
 
 type-check:
 	@echo "Running TypeScript type check..."
-	@cd andara-client && \
-		if [ ! -d node_modules ]; then \
-			echo "Installing dependencies..."; \
-			npm install --legacy-peer-deps; \
-		fi && \
+	@cd andara-client && echo "Installing dependencies..." && \
+		npm install --legacy-peer-deps && \
 		npx tsc --noEmit
 	@echo "✓ TypeScript type check passed"
 

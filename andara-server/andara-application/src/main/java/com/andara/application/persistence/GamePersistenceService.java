@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
@@ -79,7 +80,7 @@ public class GamePersistenceService {
                 instanceId,
                 saveName,
                 lastEventId,
-                Instant.now(),
+                Timestamp.from(Instant.now()),
                 metadataJson
             );
 
