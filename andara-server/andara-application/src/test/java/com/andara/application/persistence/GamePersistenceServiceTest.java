@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import java.time.Instant;
+import java.sql.Timestamp;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -53,7 +53,7 @@ class GamePersistenceServiceTest {
             eq(instanceId),
             anyString(), // save name
             eq(eventId),
-            any(Instant.class),
+            any(Timestamp.class), // created_at
             anyString() // metadata JSON
         );
     }
